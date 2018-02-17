@@ -1,0 +1,364 @@
+Archive member included to satisfy reference by file (symbol)
+
+../libn64/libn64.a(vi.o)      src/main.o (symbol from plugin) (vi_flush_state)
+../libn64/libn64.a(boot.o)    (libn64_ipl)
+../libn64/libn64.a(exception.o)
+                              ../libn64/libn64.a(boot.o) (libn64_tlb_exception_handler)
+../libn64/libn64.a(message.o)
+                              ../libn64/libn64.a(exception.o) (libn64_send_rcp_messages)
+../libn64/libn64.a(syscall.o)
+                              ../libn64/libn64.a(exception.o) (libn64_syscall_table)
+../libn64/libn64.a(main.o)    ../libn64/libn64.a(boot.o) (libn64_main)
+../libn64/libn64.a(mm.o)      main.o (symbol from plugin) (libn64_mm_init)
+../libn64/libn64.a(panic.o)   ../libn64/libn64.a(exception.o) (libn64_panic_from_isr)
+../libn64/libn64.a(thread.o)  main.o (symbol from plugin) (libn64_thread_early_init)
+../libn64/libn64.a(time.o)    main.o (symbol from plugin) (libn64_time_init)
+../libn64/libn64.a(init.o)    main.o (symbol from plugin) (libn64_sp_init)
+../libn64/libn64.a(context.o)
+                              ../libn64/libn64.a(syscall.o) (libn64_block_thread)
+../libn64/libn64.a(idle_thread.o)
+                              main.o (symbol from plugin) (libn64_idle_thread)
+../libn64/libn64.a(init.o)    init.o (symbol from plugin) (libn64_ucode_init)
+../libn64/libn64.a(init.o)    main.o (symbol from plugin) (libn64_io_init)
+../libn64/libn64.a(pi_thread.o)
+                              init.o (symbol from plugin) (libn64_pi_thread)
+../libn64/libn64.a(fbtext.o)  panic.o (symbol from plugin) (libn64_fbtext_init)
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .mdebug.eabi32
+                0x0000000000000000        0x0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(boot.o)
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(exception.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(exception.o)
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(message.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(message.o)
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(syscall.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(syscall.o)
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(context.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(context.o)
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(idle_thread.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(idle_thread.o)
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(init.o)
+ .MIPS.abiflags
+                0x0000000000000000       0x18 ../libn64/libn64.a(init.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tmp/cc6Qwv25.ltrans0.ltrans.o
+LOAD filesystem.obj
+LOAD ../libn64/libn64.a
+
+.text           0xffffffff80000400     0x3c70
+ *(.text.libn64.ipl)
+ .text.libn64.ipl
+                0xffffffff80000400       0xe0 ../libn64/libn64.a(boot.o)
+                0xffffffff80000400                libn64_ipl
+ .text.libn64.ipl
+                0xffffffff800004e0       0x20 ../libn64/libn64.a(idle_thread.o)
+                0xffffffff800004e0                libn64_idle_thread
+ *(.text.libn64.asm)
+ .text.libn64.asm
+                0xffffffff80000500      0x2e0 ../libn64/libn64.a(message.o)
+                0xffffffff80000500                libn64_send_message
+                0xffffffff80000580                libn64_send_rcp_messages
+ .text.libn64.asm
+                0xffffffff800007e0      0x4c0 ../libn64/libn64.a(syscall.o)
+                0xffffffff80000b60                libn64_syscall_recvt_message
+                0xffffffff80000bc0                libn64_syscall_send_message
+                0xffffffff80000be0                libn64_syscall_recv_message
+                0xffffffff80000c20                libn64_syscall_mq_alloc
+                0xffffffff80000c80                libn64_syscall_mq_free
+ .text.libn64.asm
+                0xffffffff80000ca0      0x380 ../libn64/libn64.a(context.o)
+                0xffffffff80000ca0                libn64_block_thread
+                0xffffffff80000cc0                libn64_maybe_unblock_thread
+                0xffffffff80000d40                libn64_context_restore
+                0xffffffff80000ea0                libn64_context_save
+ *(.text.libn64)
+ .text.libn64   0xffffffff80001020      0x590 /tmp/cc6Qwv25.ltrans0.ltrans.o
+                0xffffffff800012b8                libn64_panic_from_isr
+                0xffffffff800013c8                libn64_main
+ .text.libn64   0xffffffff800015b0        0x0 ../libn64/libn64.a(exception.o)
+                0xffffffff800015c0                . = ALIGN (0x20)
+ *fill*         0xffffffff800015b0       0x10 
+                0xffffffff800015c0                _ftext = .
+ *(.text.startup .text.startup.*)
+ .text.startup.main
+                0xffffffff800015c0      0x4f8 /tmp/cc6Qwv25.ltrans0.ltrans.o
+                0xffffffff800015c0                main
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.hot .text.hot.*)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0xffffffff80001ab8        0x0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .text.matrix_identity.constprop.9
+                0xffffffff80001ab8       0x40 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .text.calc_3d.constprop.8
+                0xffffffff80001af8       0xb8 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .text.calc_2d  0xffffffff80001bb0       0x78 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .text.rdp_command
+                0xffffffff80001c28       0x28 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .text.fill_text_triangle_array.constprop.1
+                0xffffffff80001c50      0x420 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(boot.o)
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(exception.o)
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(message.o)
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(syscall.o)
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(context.o)
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(idle_thread.o)
+ .text          0xffffffff80002070        0x0 ../libn64/libn64.a(init.o)
+ .text.libn64.ucode
+                0xffffffff80002070     0x2000 ../libn64/libn64.a(init.o)
+                0xffffffff80002070                libn64_ucode_init
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+
+.fini
+ *(SORT(.fini))
+                0xffffffff80004080                . = ALIGN (0x20)
+                [!provide]                        PROVIDE (__etext, .)
+                [!provide]                        PROVIDE (_etext, .)
+                [!provide]                        PROVIDE (etext, .)
+
+.rodata         0xffffffff80004080      0x2f8
+ *(.rodata.libn64 .rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.libn64.str1.4
+                0xffffffff80004080        0xf /tmp/cc6Qwv25.ltrans0.ltrans.o
+ *fill*         0xffffffff8000408f        0x1 
+ .rodata.libn64_panic_vi_state
+                0xffffffff80004090       0x38 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .rodata.str1.4
+                0xffffffff800040c8      0x258 /tmp/cc6Qwv25.ltrans0.ltrans.o
+                                        0x255 (size before relaxing)
+ .rodata.cst8   0xffffffff80004320       0x20 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .rodata        0xffffffff80004340       0x38 ../libn64/libn64.a(syscall.o)
+                0xffffffff80004340                libn64_syscall_table
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0xffffffff80004378                __sbss2_start = .
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+                0xffffffff80004378                __sbss2_end = .
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.data           0xffffffff80004378     0x1ba0
+                0xffffffff80004378                _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0xffffffff80004378        0x0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubeCyanCol
+                0xffffffff80004378       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubePurpleCol
+                0xffffffff800043a8       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubeYellowCol
+                0xffffffff800043d8       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubeBlueCol
+                0xffffffff80004408       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubeGreenCol
+                0xffffffff80004438       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubeRedCol
+                0xffffffff80004468       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.Sin1024  0xffffffff80004498     0x1000 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.vi_state
+                0xffffffff80005498       0x38 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.Texture64x64
+                0xffffffff800054d0      0x800 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.Tlut     0xffffffff80005cd0       0x60 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.CubeTri  0xffffffff80005d30      0x1b0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data.Matrix3D
+                0xffffffff80005ee0       0x30 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .data          0xffffffff80005f10        0x8 filesystem.obj
+                0xffffffff80005f10                _binary_filesystem_bin_start
+                0xffffffff80005f18                _binary_filesystem_bin_end
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(boot.o)
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(exception.o)
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(message.o)
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(syscall.o)
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(context.o)
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(idle_thread.o)
+ .data          0xffffffff80005f18        0x0 ../libn64/libn64.a(init.o)
+
+.data1
+ *(.data1)
+
+.got.plt
+ *(.got.plt)
+                0xffffffff8000df10                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got)
+
+.sdata          0xffffffff80005f18       0x24
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata.ucode_ptr.1303
+                0xffffffff80005f18        0x4 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .sdata.fs_ptr.1459
+                0xffffffff80005f1c        0x4 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .sdata         0xffffffff80005f20       0x1c /tmp/cc6Qwv25.ltrans0.ltrans.o
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0xffffffff80005f40                . = ALIGN (0x10)
+                0xffffffff80005f40                _edata = .
+                [!provide]                        PROVIDE (edata, .)
+                0xffffffff80005f40                . = ALIGN (0x10)
+                0xffffffff80005f40                __bss_start = .
+                0xffffffff80005f40                _fbss = .
+
+.sbss           0xffffffff80005f40        0x4
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss.memory_pos
+                0xffffffff80005f40        0x4 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ *(.scommon)
+
+.bss            0xffffffff80005f44        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0xffffffff80005f44        0x0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(boot.o)
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(exception.o)
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(message.o)
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(syscall.o)
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(context.o)
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(idle_thread.o)
+ .bss           0xffffffff80005f44        0x0 ../libn64/libn64.a(init.o)
+ *(COMMON)
+                0xffffffff80005f50                . = ALIGN (0x10)
+                0xffffffff80005f50                __bss_end = .
+
+.exception      0xffffffff80000000      0x3e0 load address 0xffffffff80005f50
+ *(.exception.tlbmiss)
+ .exception.tlbmiss
+                0xffffffff80000000      0x180 ../libn64/libn64.a(exception.o)
+                0xffffffff80000000                libn64_tlb_exception_handler
+ *(.exception.general)
+ .exception.general
+                0xffffffff80000180      0x120 ../libn64/libn64.a(exception.o)
+                0xffffffff80000180                libn64_exception_handler
+ *(.exception.routines)
+ .exception.routines
+                0xffffffff800002a0      0x140 ../libn64/libn64.a(exception.o)
+                0xffffffff800002a0                libn64_exception_handler_allocpage
+                0xffffffff80000300                libn64_exception_handler_dequeue_thread
+                0xffffffff80000380                libn64_exception_handler_queue_thread
+                0xffffffff80006350                __exception_end = (__bss_end + 0x400)
+
+.rel.dyn        0xffffffff800003e0        0x0 load address 0xffffffff80006330
+ .rel.dyn       0xffffffff800003e0        0x0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+
+.cart           0xffffffffb0006f50      0x6f0 load address 0xffffffff80006350
+ *(.cart.libn64.*)
+ .cart.libn64.gprstrs
+                0xffffffffb0006f50       0x78 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .cart.libn64.panicstrs
+                0xffffffffb0006fc8       0x88 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .cart.libn64.font
+                0xffffffffb0007050      0x5f0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+
+/DISCARD/
+ *(.rel.iplt)
+ *(.rela.iplt)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.plt)
+ *(.iplt)
+ *(.debug)
+ *(.debug_srcinfo)
+ *(.debug_sfnames)
+ *(.debug_aranges)
+ *(.debug_pubnames)
+ *(.debug_info .gnu.linkonce.wi.*)
+ *(.debug_abbrev)
+ *(.debug_line .debug_line.* .debug_line_end)
+ *(.debug_frame)
+ *(.debug_str)
+ *(.debug_loc)
+ *(.debug_macinfo)
+ *(.debug_weaknames)
+ *(.debug_funcnames)
+ *(.debug_typenames)
+ *(.debug_varnames)
+ *(.debug_pubtypes)
+ *(.debug_ranges)
+ *(.debug_macro)
+ *(.mdebug.abi32)
+ *(.mdebug.abiN32)
+ *(.mdebug.abi64)
+ *(.mdebug.abiO64)
+ *(.mdebug.eabi32)
+ *(.mdebug.eabi64)
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+ *(.MIPS.abiflags)
+OUTPUT(cubeTextRDP.elf elf32-bigmips)
+
+.pdr            0x0000000000000000      0x180
+ .pdr           0x0000000000000000      0x180 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(boot.o)
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(exception.o)
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(message.o)
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(syscall.o)
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(context.o)
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(idle_thread.o)
+ .pdr           0x0000000000000180        0x0 ../libn64/libn64.a(init.o)
+
+.gcc_compiled_long32
+                0x0000000000000000        0x0
+ .gcc_compiled_long32
+                0x0000000000000000        0x0 /tmp/cc6Qwv25.ltrans0.ltrans.o
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 /tmp/cc6Qwv25.ltrans0.ltrans.o
+                                         0x12 (size before relaxing)
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 /tmp/cc6Qwv25.ltrans0.ltrans.o
+ .gnu.attributes
+                0x0000000000000010       0x10 ../libn64/libn64.a(boot.o)
+ .gnu.attributes
+                0x0000000000000020       0x10 ../libn64/libn64.a(exception.o)
+ .gnu.attributes
+                0x0000000000000030       0x10 ../libn64/libn64.a(message.o)
+ .gnu.attributes
+                0x0000000000000040       0x10 ../libn64/libn64.a(syscall.o)
+ .gnu.attributes
+                0x0000000000000050       0x10 ../libn64/libn64.a(context.o)
+ .gnu.attributes
+                0x0000000000000060       0x10 ../libn64/libn64.a(idle_thread.o)
+ .gnu.attributes
+                0x0000000000000070       0x10 ../libn64/libn64.a(init.o)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 ../libn64/libn64.a(boot.o)
